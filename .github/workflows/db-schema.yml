@@ -1,9 +1,9 @@
 name: Catalogue DB Image
 
 on:
-  push:
-    branches:
-      - db
+#  push:
+#    branches:
+#      - db
   workflow_dispatch:
 
 jobs:

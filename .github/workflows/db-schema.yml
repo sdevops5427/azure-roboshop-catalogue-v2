@@ -1,0 +1,19 @@
+name: Shipping DB Image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+#      - run: cd db
+      - name: Docker Build
+        run: cd db $$ docker build --load -t catalogue-db-image .
+      - name: Tag Image
+        run: docker tag catalogue-db-image:latest roboshop5427.azurecr.io/catalogue-db-image:latest
+      - name: Push Image
+        run: docker push roboshop5427.azurecr.io/catalogue-db-image:latest
+####
+
